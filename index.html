@@ -15,7 +15,7 @@
         <style>
         #map {
             width: 1528px;
-            height: 852px;
+            height: 891px;
         }
         </style>
         <style>
@@ -57,7 +57,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-10.480202816213932,-113.4759427667246],[40.55278198642888,-14.77930098365536]]);
+        }).fitBounds([[-14.64865310665682,-115.87081484014912],[43.26672574302276,-7.909919840130118]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -228,7 +228,7 @@
                 weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(236,110,137,0.97)',
+                fillColor: 'rgba(180,236,233,0.97)',
                 interactive: false,
             }
         }
@@ -335,11 +335,20 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Asset'] !== null ? autolinker.link(String(feature.properties['Asset']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['IMG'] !== null ? '<img src="images/' + String(feature.properties['IMG']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Range (km)</th>\
-                        <td>' + (feature.properties['Range (km)'] !== null ? autolinker.link(String(feature.properties['Range (km)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type of Range'] !== null ? autolinker.link(String(feature.properties['Type of Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Range'] !== null ? autolinker.link(String(feature.properties['Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -391,11 +400,20 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Asset'] !== null ? autolinker.link(String(feature.properties['Asset']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['IMG'] !== null ? '<img src="images/' + String(feature.properties['IMG']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Range (km)</th>\
-                        <td>' + (feature.properties['Range (km)'] !== null ? autolinker.link(String(feature.properties['Range (km)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type of Range'] !== null ? autolinker.link(String(feature.properties['Type of Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Range'] !== null ? autolinker.link(String(feature.properties['Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -409,11 +427,11 @@
             return {
                 pane: 'pane_FA18SHTotalRange_4',
                 opacity: 1,
-                color: 'rgba(236,110,137,1.0)',
-                dashArray: '4.0,2.0',
+                color: 'rgba(169,225,236,1.0)',
+                dashArray: '5.0,1.0,2.0,1.0,2.0,1.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(236,153,78,0.0)',
@@ -449,11 +467,20 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Asset'] !== null ? autolinker.link(String(feature.properties['Asset']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['IMG'] !== null ? '<img src="images/' + String(feature.properties['IMG']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Range (km)</th>\
-                        <td>' + (feature.properties['Range (km)'] !== null ? autolinker.link(String(feature.properties['Range (km)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type of Range'] !== null ? autolinker.link(String(feature.properties['Type of Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Range'] !== null ? autolinker.link(String(feature.properties['Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -467,8 +494,8 @@
             return {
                 pane: 'pane_FA18SHCombatRange_5',
                 opacity: 1,
-                color: 'rgba(236,110,137,1.0)',
-                dashArray: '4.0,2.0',
+                color: 'rgba(169,225,236,1.0)',
+                dashArray: '10.0,2.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 2.0, 
@@ -507,11 +534,20 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Asset'] !== null ? autolinker.link(String(feature.properties['Asset']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['IMG'] !== null ? '<img src="images/' + String(feature.properties['IMG']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Range (km)</th>\
-                        <td>' + (feature.properties['Range (km)'] !== null ? autolinker.link(String(feature.properties['Range (km)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type of Range'] !== null ? autolinker.link(String(feature.properties['Type of Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Range'] !== null ? autolinker.link(String(feature.properties['Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -526,10 +562,10 @@
                 pane: 'pane_F35TotalRange_6',
                 opacity: 1,
                 color: 'rgba(248,193,86,1.0)',
-                dashArray: '4.0,2.0',
+                dashArray: '5.0,1.0,2.0,1.0,2.0,1.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(248,193,86,0.0)',
@@ -565,11 +601,20 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Asset'] !== null ? autolinker.link(String(feature.properties['Asset']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['IMG'] !== null ? '<img src="images/' + String(feature.properties['IMG']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Range (km)</th>\
-                        <td>' + (feature.properties['Range (km)'] !== null ? autolinker.link(String(feature.properties['Range (km)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Range'] !== null ? autolinker.link(String(feature.properties['Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type of Range'] !== null ? autolinker.link(String(feature.properties['Type of Range']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -584,7 +629,7 @@
                 pane: 'pane_F35CombatRange_7',
                 opacity: 1,
                 color: 'rgba(248,193,86,1.0)',
-                dashArray: '4.0,2.0',
+                dashArray: '10.0,2.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 2.0, 

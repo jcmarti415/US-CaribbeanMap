@@ -1,0 +1,1 @@
+var json_IllustrativeUSVesselsLocation_1 = {"type":"FeatureCollection","name":"IllustrativeUSVesselsLocation_1","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"qc_id":0.0,"fid":"1","name":null},"geometry":{"type":"MultiPoint","coordinates":[[-65.691451344209923,14.505607992559076]]}}]}

@@ -1,0 +1,1 @@
+var json_RooseveltRoadsNavalStation_2 = {"type":"FeatureCollection","name":"RooseveltRoadsNavalStation_2","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"qc_id":0.0,"fid":"1","name":"Aeropuerto Jose Aponte"},"geometry":{"type":"MultiPoint","coordinates":[[-65.639988798253597,18.247755153046509]]}}]}
